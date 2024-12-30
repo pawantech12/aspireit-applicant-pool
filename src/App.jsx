@@ -23,6 +23,7 @@ import Briefcase from "./assets/briefcase.svg";
 import Securitytime from "./assets/securitytime.svg";
 import backgroundImage1 from "./assets/Rectangle 7522.png";
 import whiteArrow from "./assets/whiteDownArrow.svg";
+import Rupees from './assets/rupees.svg';
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
 import ReactPaginate from "react-paginate";
@@ -329,45 +330,41 @@ const ApplicantsPool = () => {
                 <img
                   src={Meta}
                   alt="Company Logo"
-                  className="w-24 h-24 rounded-full -mt-2"
+                  className="w-[86px] h-[72px] rounded-full -mt-2"
                 />
               </div>
               <div className="ml-1 ">
-                <h2 className="text-[24px] font-bold">UI/UX Designer</h2>
+                <h2 className="text-[24px] font-bold text-[#2D2D2D]">UI/UX Designer</h2>
                 <p className=" flex text-[16px] font-medium text-[#787878]">
                   Meta |
-                  <img className="h-5 mt-2 mr-1" src={Location} alt="" /> Noida
+                  <img className="h-[14px] w-[14px] mt-2 mr-1" src={Location} alt="" /> Noida
                 </p>
                 <div className="flex items-center">
-                  <img className="h-[18px]" src={Briefcase} alt="" />
-                  <span className="text-[16px] font-medium text-[#747474]">
+                  <img className="h-[18px] w-[18px]" src={Briefcase} alt="" />
+                  <span className="text-[16px] font-medium text-[#747474] ml-[2px]">
                     2 years
                   </span>
-                  <span className="mx-2">|</span>
-                  <img className="h-[18px] mr-1" src={Securitytime} alt="" />
+                  <span className="mx-2 h-[15px] border border-l border-[#BCB4B4]"></span>
+                  <img className="h-[18px] w-[18px] mr-1" src={Securitytime} alt="" />
                   <span className="text-[16px] font-medium text-[#747474]">
                     Fulltime
                   </span>
-                  <span className="mx-2">|</span>
+                  <span className="mx-2 h-[15px] border border-l border-[#BCB4B4]"></span>
+                  <img className="h-[18px] w-[9px] mr-1" src={Rupees} alt="" />
                   <span className="text-[16px] font-medium text-[#747474]">
-                    ₹ 3 - 5 LPA
+                    3 - 5 LPA
                   </span>
                 </div>
               </div>
             </div>
             <div className="flex items-center space-x-4 -mt-10">
               <button
-                className="p-3 rounded-md border border-[#0072DC] text-[16px] font-medium"
-                style={{
-                  backgroundColor: "#FFFFFF",
-                  color: "#0072DC",
-                }}
+                className="p-3 rounded-[10px] border border-[#0072DC] text-[16px] font-medium text-[#0072DC]"
               >
                 View Details
               </button>
               <button
-                className="p-3 rounded-md text-[16px] font-medium"
-                style={{ backgroundColor: "#C4C4C4", color: "#FFFFFF" }}
+                className="p-3 rounded-[10px] text-[16px] font-medium bg-[#C4C4C4] text-white cursor-not-allowed"
               >
                 Position Closed
               </button>
@@ -376,25 +373,25 @@ const ApplicantsPool = () => {
           <div className="mt-4 ml-4 ">
             <h3 className="text-[16px] font-medium ml-2">Key Skills:</h3>
             <div className="flex flex-wrap mt-2">
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 User Research
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 Figma
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 Framer
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 Photoshop
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 UX
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 Information Architecture
               </span>
-              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-1 px-2 rounded-lg mr-0.5 mb-2">
+              <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
                 Visual Design
               </span>
             </div>
@@ -402,7 +399,7 @@ const ApplicantsPool = () => {
         </div>
         <div className="w-[30%] space-y-4 ml-4 mr-6 flex items-center">
           <div
-            className="border border-white p-4 rounded-lg flex justify-between items-center h-[46%] w-full"
+            className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] w-full"
             style={{
               backgroundImage: `url(${backgroundImage1})`,
               backgroundSize: "cover",
@@ -410,10 +407,10 @@ const ApplicantsPool = () => {
             }}
           >
             <div>
-              <h3 className="ml-1 text-[16px] font-semibold">
+              <h3 className="ml-1 text-[16px] font-semibold text-[#333232]">
                 Total Candidate
               </h3>
-              <p className="ml-1 text-[14px] text-[#A09E9E]">
+              <p className="ml-1 text-[14px] text-[#A09E9E] font-medium">
                 For the entire period
               </p>
             </div>
