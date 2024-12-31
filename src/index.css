@@ -66,17 +66,32 @@
   }
 
   /* applicant pool started */
-  .custom-checkbox:checked::before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 8px;
-    border: solid white;
-    border-width: 0 1.5px 1.5px 0;
-    transform: rotate(45deg);
+  /* Hide the default checkbox tick */
+  input[type="checkbox"].custom-checkbox {
+    appearance: none; /* Remove default checkbox style */
+    width: 24px;
+    height: 24px;
+    border: 2px solid #737373; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+    background-color: white; /* Background color when unchecked */
     position: relative;
-    top: 4px;
-    left: 6px;
+  }
+
+  /* Style for when the checkbox is checked */
+  input[type="checkbox"].custom-checkbox:checked {
+    background-color: #0072dc; /* Background color when checked */
+    border-color: transparent; /* Remove the border color when checked */
+  }
+
+  /* Hide the tick mark */
+  input[type="checkbox"].custom-checkbox:checked::before {
+    content: ""; /* Remove the tick symbol */
+  }
+
+  /* Focus ring when the checkbox is focused */
+  input[type="checkbox"].custom-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 114, 220, 0.5); /* Custom focus ring */
   }
 
   ::-webkit-scrollbar {
@@ -172,7 +187,10 @@
     background-color: #343434 !important;
   }
 }
-
+/* Hide the tick mark */
+input[type="checkbox"].custom-checkbox:checked::before {
+  content: ""; /* Remove the tick symbol */
+}
 .view-more-btn:hover {
   background-color: rgba(26, 25, 25, 0.3);
   transform: scale(1.05);

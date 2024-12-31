@@ -340,18 +340,18 @@ const ApplicantsPool = () => {
   }, []);
 
   return (
-    <div className="bg-[#F2F2F2] h-full py-5">
-      <div className="w-full max-w-[1400px] mx-auto">
-        <div className="flex justify-between bg-gray-100 p-4 rounded-lg px-8 h-[32%]  mx-auto">
-          <div className="w-[68%] flex flex-col border border-white bg-white p-4 rounded-[15px] justify-between">
-            <div className="flex justify-between h-[40%]">
-              <div className="w-3/5">
-                <div className="flex gap-4 h-full">
+    <div className="bg-[#F2F2F2] h-full py-5 max-[520px]:py-0">
+      <div className="w-full  mx-auto">
+        <div className="flex justify-between bg-gray-100 p-4 rounded-lg px-8 max-[520px]:px-4 h-[32%] mx-auto max-xl:flex-col max-xl:gap-8">
+          <div className="w-full xl:w-[68%] flex flex-col border border-white bg-white p-4 rounded-[15px] justify-between mb-4 md:mb-0 max-md:gap-8">
+            <div className="flex justify-between h-[40%] max-md:flex-col max-md:gap-6 ">
+              <div className="w-full md:w-3/5 ">
+                <div className="flex gap-4 h-full max-[520px]:flex-col">
                   <div className="flex items-center">
                     <img
                       src={Meta}
                       alt="Company Logo"
-                      className="w-full h-full"
+                      className="w-full h-full max-[520px]:w-[100px] max-[520px]:h-[100px]"
                     />
                   </div>
                   <div className="">
@@ -398,7 +398,7 @@ const ApplicantsPool = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center space-x-4 -mt-10">
+              <div className="flex items-center space-x-4 ">
                 <button className="p-3 rounded-[10px] border border-[#0072DC] text-[16px] font-medium text-[#0072DC]">
                   View Details
                 </button>
@@ -409,34 +409,34 @@ const ApplicantsPool = () => {
             </div>
             <div className="ml-4">
               <h3 className="text-[16px] font-medium">Key Skills:</h3>
-              <div className="flex flex-wrap mt-2">
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+              <div className="flex flex-wrap mt-2 max-sm:gap-2">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   User Research
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   Figma
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   Framer
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   Photoshop
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   UX
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   Information Architecture
                 </span>
-                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] mb-[24px]">
+                <span className="bg-[#F3F3F3] text-[14px] font-medium text-[#656565] py-[8px] px-[5px] rounded-lg mr-[4px] ">
                   Visual Design
                 </span>
               </div>
             </div>
           </div>
-          <div className="w-[30%] space-y-4  flex flex-col">
+          <div className="w-full xl:w-[30%]  flex flex-col max-xl:flex-row gap-8 max-[860px]:flex-col">
             <div
-              className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] w-full"
+              className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] max-xl:h-[130px] w-full"
               style={{
                 backgroundImage: `url(${backgroundImage1})`,
                 backgroundSize: "cover",
@@ -453,7 +453,7 @@ const ApplicantsPool = () => {
               </div>
               <p className="text-[36px] font-semibold mr-2">1200+</p>
             </div>
-            <div className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] w-full bg-total-cost-gradient">
+            <div className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] max-xl:h-full w-full bg-total-cost-gradient">
               <div>
                 <h3 className="ml-1 text-[16px] font-semibold text-[#333232]">
                   Total Cost
@@ -470,8 +470,8 @@ const ApplicantsPool = () => {
                     border: "1px solid transparent",
                     borderImage:
                       "linear-gradient(90.63deg, #FFFFFF 8.7%, #D2D2D2 27.55%, #FFFFFF 50.08%, #D2D2D2 78.42%, #FFFFFF 98.38%)",
-                    borderImageSlice: 1, // Ensures the gradient is applied properly
-                    borderRadius: "12px", // Rounds the corners
+                    borderImageSlice: 1,
+                    borderRadius: "12px",
                   }}
                 >
                   Open 5Aug - Close 2Sep
@@ -483,11 +483,11 @@ const ApplicantsPool = () => {
 
         <div className="px-10 justify-between mt-[27px] h-[68%]">
           <p className="font-semibold text-[24px] Inter">Candidate List</p>
-          <div className="justify-between flex">
-            <div className="mt-2 flex relative">
+          <div className="justify-between flex max-lg:flex-col gap-5">
+            <div className="mt-2 flex relative gap-4 flex-wrap">
               <input
                 type="text"
-                className="outline-none rounded-full h-[44px] w-[350px] placeholder:text-[#353535] text-[16px] pl-[60px] text-[#353535] shadow-[0px_0px_2px_0px_#00000040]"
+                className="outline-none rounded-full h-[44px] w-[350px] placeholder:text-[#353535] text-[16px] pl-[60px] text-[#353535] shadow-[0px_0px_2px_0px_#00000040] max-lg:w-full"
                 placeholder="Search Candidates"
               />
               <CiSearch
@@ -496,7 +496,7 @@ const ApplicantsPool = () => {
               />
               <div className="relative flex">
                 <button
-                  className={`relative z-10 ml-[16px] border border-white h-[44px] justify-center flex items-center rounded-[24px] text-[16px] cursor-pointer transition-all duration-300 overflow-hidden ${
+                  className={`relative z-10  border border-white h-[44px] justify-center flex items-center rounded-[24px] text-[16px] cursor-pointer transition-all duration-300 overflow-hidden ${
                     showSkillScore
                       ? "text-white w-[191px]"
                       : "bg-white text-[#161616] w-[159px]"
@@ -532,7 +532,7 @@ const ApplicantsPool = () => {
                   )}
                 </button>
               </div>
-              <div className="ml-[16px] border border-white h-[44px] w-[102px] flex items-center rounded-[24px] bg-white text-[16px] text-[#161616]">
+              <div className="border border-white h-[44px] w-[102px] flex items-center rounded-[24px] bg-white text-[16px] text-[#161616]">
                 <img src={Filter} alt="" className="ml-[19.4px]" />
                 <p className="ml-[8px] text-[#161616] text-[16px]">Filter</p>
               </div>
@@ -597,9 +597,9 @@ const ApplicantsPool = () => {
               </div>
               <div className="flex text-[14px] Inter font-semibold"></div>
             </div>
-            <div className="min-w-[1200px] overflow-y-auto h-[47%] bg-[#F1F4F8] mt-[12px] scrollbar-left">
+            <div className="min-w-[1200px] overflow-y-auto  bg-[#F1F4F8] mt-[12px] scrollbar-left">
               <div className="min-w-full text-left rounded-xl h-full">
-                <div className="space-y-[12px] h-[300px]">
+                <div className="space-y-[12px] h-[600px]">
                   {currentCandidates.map((candidate, idx) => (
                     <React.Fragment key={idx}>
                       <div className="flex items-center">
@@ -662,7 +662,7 @@ const ApplicantsPool = () => {
                             />
                           )}
 
-                          <div className="flex items-center justify-center w-[6%] pl-[1.5%]">
+                          <div className="flex items-center justify-center w-[6%] pl-[6px]">
                             <input
                               type="checkbox"
                               className="custom-checkbox h-6 w-6 appearance-none border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
@@ -674,7 +674,7 @@ const ApplicantsPool = () => {
                             <img
                               src={candidate.profile}
                               alt="Profile"
-                              className="h-10 w-10 rounded-full"
+                              className="h-[42px] w-[42px] rounded-full"
                             />
                             <div className="z-20 ml-[4px]">
                               <p
@@ -749,7 +749,7 @@ const ApplicantsPool = () => {
                           </div>
 
                           <div
-                            className={`flex items-center ml-[2.3%] w-[35%] text-[14px] font-medium bg-transparent ${
+                            className={`flex items-center ml-[40px] w-[35%] text-[14px] font-medium bg-transparent ${
                               tableBGColor ? "text-white" : "text-[#656565]"
                             }`}
                           >
