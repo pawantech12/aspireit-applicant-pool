@@ -86,7 +86,10 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-[#A8A8A8] rounded-xl;
   }
-
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
   .scrollbar-left {
     direction: rtl;
   }
@@ -555,16 +558,16 @@ table td:last-child {
 /* dummy */
 @keyframes circle-spin {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 
 @layer utilities {
   .animate-circle-spin {
-      animation: circle-spin 5s linear infinite;
+    animation: circle-spin 5s linear infinite;
   }
 }
 

@@ -20,6 +20,8 @@ export default {
         "premium-gradient": "linear-gradient(0deg, #F5F4CE 0%, #FFBD9F 100%)",
         "company-gradient":
           "linear-gradient(to bottom, #FEC4CB 0%, #F4C8EF 63%)",
+        "total-cost-gradient":
+          "radial-gradient(48.98% 381.78% at 51.02% 52.52%, #D9FFEE 0%, #E3FFE3 44.4%, #FFFFFF 100%)",
       },
       animation: {
         blink: "blink 1.5s infinite",
