@@ -684,13 +684,17 @@ const ApplicantsPool = () => {
                               >
                                 {candidate.name}
                               </p>
-                              <span
-                                className={`text-[14px] font-medium ${
-                                  tableBGColor ? "text-white" : "text-[#A6A6A6]"
-                                }`}
-                              >
-                                {candidate.role}
-                              </span>
+                              <div className="w-[100px] truncate xl:w-[150px] ">
+                                <span
+                                  className={`text-[14px] font-medium ${
+                                    tableBGColor
+                                      ? "text-white"
+                                      : "text-[#A6A6A6]"
+                                  }`}
+                                >
+                                  {candidate.role}
+                                </span>
+                              </div>
                             </div>
                           </div>
 
