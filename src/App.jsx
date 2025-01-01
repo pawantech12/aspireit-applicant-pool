@@ -563,306 +563,299 @@ const ApplicantsPool = () => {
             </div>
           </div>
           <div className="overflow-x-auto ">
-            <div className="min-w-[1200px] bg-white text-tableHead flex py-[13px] rounded-xl mt-[21px] gap-[2px]">
-              <div className="flex items-center justify-center w-[10%] text-[14px] Inter font-semibold">
-                Applied Date
-              </div>
-              <div className="flex items-center justify-center w-[5%]">
-                <input
-                  type="checkbox"
-                  className="custom-checkbox h-6 w-6  border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
-                  checked={isAllSelected}
-                  onChange={handleSelectAllChange}
-                />
-              </div>
-              <div className="flex items-center w-[15%] pl-[10px] text-[14px] Inter font-semibold">
-                Candidate Name
-              </div>
-              {showSkillScore && (
-                <div className="flex w-[10%] text-[14px] Inter font-semibold">
-                  Skill Stack Score
+            <table className="table-fixed min-w-[1300px]">
+              <thead
+                className={`min-w-[1200px] overflow-x-auto bg-white text-tableHead  py-[13px] flex gap-7 rounded-xl mt-[21px]  px-5
+                `}
+              >
+                <th className="flex items-center text-[14px] Inter font-semibold">
+                  Applied Date
+                </th>
+                <div
+                  className={`grid ps-5 gap-5 w-full ${
+                    showSkillScore
+                      ? "grid-cols-custom-8-candidate"
+                      : "grid-cols-custom-7-candidate"
+                  }`}
+                >
+                  <th className="flex items-center  justify-center">
+                    <input
+                      type="checkbox"
+                      className="custom-checkbox h-6 w-6  border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
+                      checked={isAllSelected}
+                      onChange={handleSelectAllChange}
+                    />
+                  </th>
+                  <th className="flex items-center  text-[14px] Inter font-semibold">
+                    Candidate Name
+                  </th>
+                  {showSkillScore && (
+                    <th className="flex text-[14px] Inter font-semibold items-center">
+                      Skill Stack Score
+                    </th>
+                  )}
+                  <th className="flex items-center  text-[14px] Inter font-semibold">
+                    Experience
+                  </th>
+                  <th className="flex items-center  text-[14px] Inter font-semibold">
+                    Company
+                  </th>
+                  <th className="flex items-center   text-[14px] Inter font-semibold ">
+                    Location
+                  </th>
+                  <th className="flex items-center  text-[14px]  Inter font-semibold">
+                    Key Skills
+                  </th>
                 </div>
-              )}
-              <div className="flex items-center justify-center w-[4%] text-[14px] Inter font-semibold ps-5">
-                Experience
-              </div>
-              <div className="flex items-center pl-[4.9%] w-[10%] text-[14px] Inter font-semibold">
-                Company
-              </div>
-              <div className="flex items-center justify-center w-[8.8%] text-[14px] Inter font-semibold ">
-                Location
-              </div>
-              <div className="flex items-center w-[25%] text-[14px] pl-[3%] Inter font-semibold">
-                Key Skills
-              </div>
-              <div className="flex text-[14px] Inter font-semibold"></div>
-            </div>
-            <div className="min-w-[1200px] overflow-y-auto  bg-[#F1F4F8] mt-[12px] scrollbar-left">
-              <div className="min-w-full text-left rounded-xl h-full">
-                <div className="space-y-[12px] h-[600px]">
-                  {currentCandidates.map((candidate, idx) => (
-                    <React.Fragment key={idx}>
-                      <div className="flex items-center">
-                        <div className="flex flex-col items-center w-[10%]">
-                          <span className="text-[#888888] text-[14px] font-medium Inter">
-                            {candidate.date}
-                          </span>
-                        </div>
-                        <div
-                          className={`bg-white flex w-[100%] gap-[10px] py-[19.5px] relative overflow-hidden ${
-                            isShadowVisible
-                              ? getCardGradient(candidate.score)
-                              : ""
-                          }  ${
-                            loadingSummary[idx] || summaryVisible[idx]
-                              ? tableScore
-                                ? "rounded-t-[8px] border-transparent"
-                                : "rounded-t-[10px]"
-                              : tableScore
-                              ? "rounded-[8px] border-transparent"
-                              : "rounded-[10px]"
-                          }`}
-                        >
-                          {isAnimating && (
-                            <div
-                              ref={(el) =>
-                                (candidateGradientRefs.current[idx] = el)
-                              }
-                              className="absolute inset-[-1200%] transition-opacity duration-300"
-                              style={{
-                                background: `conic-gradient(from 270deg, 
-                              #420167 1%, 
-                              #8F48F8 22%, 
-                              #2061F8 36%, 
-                              #2D79F5 51%, 
-                              #0FB3D4 65%, 
-                              #241C70 84%, 
-                              #420167 100%)`,
-                                transform: `translateY(10%) rotate(${
-                                  candidateRotations[idx] || 0
-                                }deg)`,
-                                opacity: 0.2,
-                              }}
-                            />
-                          )}
-                          {tableScore && (
-                            <div
-                              className="absolute inset-0 border-[2px] border-transparent pointer-events-none overflow-hidden  rounded-xl opacity-60"
-                              style={{
-                                background: `${getScoreBackground(
-                                  candidate.score
-                                )}`,
-                                borderRadius: "inherit", // Ensures the border respects the parent rounding
-                                WebkitMask:
-                                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                                mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                                WebkitMaskComposite: "destination-out",
-                                maskComposite: "exclude",
-                              }}
-                            />
-                          )}
+              </thead>
 
-                          <div className="flex items-center justify-center w-[7%] pl-[6px]">
-                            <input
-                              type="checkbox"
-                              className="custom-checkbox h-6 w-6  border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
-                              checked={selectedCandidates.includes(idx)}
-                              onChange={() => handleCheckboxChange(idx)}
-                            />
-                          </div>
-                          <div className="z-20 flex items-center w-[15%]">
-                            <img
-                              src={candidate.profile}
-                              alt="Profile"
-                              className="h-[42px] w-[42px] rounded-full"
-                            />
-                            <div className="z-20 ml-[4px]">
-                              <p
-                                className={`mb-[-5px] text-[14px] font-medium ${
-                                  tableBGColor ? "text-white" : "text-black"
-                                }`}
-                              >
-                                {candidate.name}
-                              </p>
-                              <div className="w-[100px] truncate xl:w-[150px] ">
-                                <span
-                                  className={`text-[14px] font-medium ${
-                                    tableBGColor
-                                      ? "text-white"
-                                      : "text-[#A6A6A6]"
-                                  }`}
-                                >
-                                  {candidate.role}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
+              <tbody className="min-w-[1200px] overflow-y-auto bg-[#F1F4F8] mt-[12px] scrollbar-left">
+                {currentCandidates.map((candidate, idx) => (
+                  <React.Fragment key={idx}>
+                    <tr className="flex items-center gap-5 ps-5 space-y-3">
+                      <td className="flex flex-col items-center w-[7%]">
+                        <span className="text-[#888888] text-[14px] font-medium Inter">
+                          {candidate.date}
+                        </span>
+                      </td>
 
-                          {tableScore && (
-                            <div
-                              className={`flex items-center justify-center ps-24`}
-                            >
-                              <div
-                                className="rounded-[12px] w-[44px] h-[22px] font-bold items-center flex justify-center"
-                                style={{
-                                  background: getScoreBackground(
-                                    candidate.score
-                                  ),
-                                  color:
-                                    candidate.score >= 700
-                                      ? "white"
-                                      : "#6F6F6F",
-                                }}
-                              >
-                                {candidate.score}
-                              </div>
-                            </div>
-                          )}
+                      <tr
+                        className={`bg-white grid ${
+                          showSkillScore
+                            ? "grid-cols-custom-8-candidate"
+                            : "grid-cols-custom-7-candidate"
+                        } w-[100%] gap-5 py-[19.5px] relative overflow-hidden px-5 ${
+                          isShadowVisible
+                            ? getCardGradient(candidate.score)
+                            : ""
+                        } ${
+                          loadingSummary[idx] || summaryVisible[idx]
+                            ? tableScore
+                              ? "rounded-t-[8px] border-transparent"
+                              : "rounded-t-[10px]"
+                            : tableScore
+                            ? "rounded-[8px] border-transparent"
+                            : "rounded-[10px]"
+                        }`}
+                      >
+                        {isAnimating && (
                           <div
-                            className={`flex z-20 items-center ${
-                              showSkillScore
-                                ? "pl-[8%] w-[14%] ml-[1%]"
-                                : "pl-[0.7%] w-[7%]"
-                            }`}
-                          >
-                            <span
-                              className={`text-[14px] font-medium ${
+                            ref={(el) =>
+                              (candidateGradientRefs.current[idx] = el)
+                            }
+                            className="absolute inset-[-1200%] transition-opacity duration-300"
+                            style={{
+                              background: `conic-gradient(from 270deg, 
+            #420167 1%, 
+            #8F48F8 22%, 
+            #2061F8 36%, 
+            #2D79F5 51%, 
+            #0FB3D4 65%, 
+            #241C70 84%, 
+            #420167 100%)`,
+                              transform: `translateY(10%) rotate(${
+                                candidateRotations[idx] || 0
+                              }deg)`,
+                              opacity: 0.2,
+                            }}
+                          />
+                        )}
+
+                        {tableScore && (
+                          <td
+                            className="absolute inset-0 border-[2px] border-transparent pointer-events-none overflow-hidden rounded-xl opacity-60"
+                            style={{
+                              background: `${getScoreBackground(
+                                candidate.score
+                              )}`,
+                              borderRadius: "inherit", // Ensures the border respects the parent rounding
+                              WebkitMask:
+                                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                              mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                              WebkitMaskComposite: "destination-out",
+                              maskComposite: "exclude",
+                            }}
+                          />
+                        )}
+
+                        <td className="flex items-center justify-center">
+                          <input
+                            type="checkbox"
+                            className="custom-checkbox h-6 w-6 border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
+                            checked={selectedCandidates.includes(idx)}
+                            onChange={() => handleCheckboxChange(idx)}
+                          />
+                        </td>
+
+                        <td className="z-20 flex items-center">
+                          <img
+                            src={candidate.profile}
+                            alt="Profile"
+                            className="h-[42px] w-[42px] rounded-full"
+                          />
+                          <div className="z-20 ml-[4px]">
+                            <p
+                              className={`mb-[-5px] text-[14px] font-medium ${
                                 tableBGColor ? "text-white" : "text-black"
                               }`}
                             >
-                              {candidate.experience}
-                            </span>
-                          </div>
-
-                          <div
-                            className={`z-20 flex items-center pl-[4%] text-[14px] font-medium w-[10%] ${
-                              showSkillScore && "pl-[5%] "
-                            } ${
-                              tableBGColor ? "text-white" : "text-tableBody"
-                            }`}
-                          >
-                            {candidate.company}
-                          </div>
-
-                          <div
-                            className={`z-20 flex items-center text-[14px] font-medium ${
-                              showSkillScore
-                                ? "w-[7%] ml-[5%]"
-                                : "w-[7%] pl-[2.3%]"
-                            } ${
-                              tableBGColor ? "text-white" : "text-tableBody"
-                            }`}
-                          >
-                            {candidate.location}
-                          </div>
-
-                          <div
-                            className={`flex items-center ml-[40px] pl-[2%] w-[35%] text-[14px] font-medium bg-transparent ${
-                              tableBGColor ? "text-white" : "text-[#656565]"
-                            }`}
-                          >
-                            <SkillDisplay
-                              skills={candidate.skills}
-                              tableBGColor={tableBGColor}
-                            />
-                          </div>
-
-                          <div className="flex items-center justify-center w-[18%]">
-                            <button
-                              className={`inline-flex items-center justify-center rounded-lg border hover:bg-[#E5F1FB] hover:border-[#0072DC] transition-all duration-1000 ease-in-out w-26  ${
-                                tableBGColor
-                                  ? "border-black"
-                                  : "border-[#98CDFF]"
-                              } ${
-                                loadingSummary[idx] || summaryVisible[idx]
-                                  ? "px-3 py-2"
-                                  : "p-3"
-                              }`}
-                              onClick={() => toggleSummary(idx)}
-                            >
-                              {!(
-                                loadingSummary[idx] || summaryVisible[idx]
-                              ) && (
-                                <img
-                                  src={aiLogo}
-                                  alt=""
-                                  className={`h-6 mt-[-2px]`}
-                                />
-                              )}
+                              {candidate.name}
+                            </p>
+                            <div className="w-[100px] truncate xl:w-[150px]">
                               <span
-                                className={`text-[16px] font-medium Inter ${
-                                  tableBGColor ? "text-black" : "text-[#0072DC]"
-                                } ${
-                                  loadingSummary[idx] || summaryVisible[idx]
-                                    ? "content-center"
-                                    : "pl-2"
+                                className={`text-[14px] font-medium ${
+                                  tableBGColor ? "text-white" : "text-[#A6A6A6]"
                                 }`}
                               >
-                                {loadingSummary[idx]
-                                  ? "Close"
-                                  : summaryVisible[idx]
-                                  ? "Close"
-                                  : "Summarize"}
+                                {candidate.role}
                               </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      {loadingSummary[idx] || summaryVisible[idx] ? (
-                        <div className="bg-[#F1F4F8]">
-                          <div className="p-0">
-                            <div
-                              className={`relative flex flex-col px-20 py-5 rounded-b-[10px] bg-summarize_gradient opacity-[80%] w-[91%] ml-[9%] -mt-[12px]`}
-                            >
-                              {loadingSummary[idx] ? (
-                                <div className="opacity-100">
-                                  <p className="text-sm font-semibold flex justify-center border border-white/10 bg-white/40 rounded-lg p-1 w-60">
-                                    <img
-                                      src={aiLogo}
-                                      alt=""
-                                      className="h-5 mr-2"
-                                    />
-                                    <span className="text-black text-[16px] font-medium">
-                                      AI Summarizing...
-                                    </span>
-                                  </p>
-                                  <div className="loading-rectangle opacity-50 mt-3"></div>
-                                  <div className="loading-rectangle opacity-50"></div>
-                                  <div className="loading-rectangle opacity-50"></div>
-                                </div>
-                              ) : (
-                                <div>
-                                  <p className="text-sm font-semibold flex justify-center border border-white/10 bg-white/40 rounded-lg p-1 w-60">
-                                    <img
-                                      src={aiLogo}
-                                      alt=""
-                                      className="h-5 mr-2"
-                                    />
-                                    <span className="text-black text-[16px] font-medium">
-                                      AI Summary
-                                    </span>
-                                  </p>
-                                  <p className="text-[14px] font-medium mt-3 text-justify">
-                                    Seeking a creative UI/UX Designer
-                                    specializing in web and mobile platforms,
-                                    focused on intuitive, responsive, and
-                                    visually engaging interfaces. Proficient in
-                                    Figma, Transform ideas into high-quality
-                                    designs, ensuring seamless user experiences
-                                    across devices while aligning with business
-                                    goals.
-                                  </p>
-                                </div>
-                              )}
                             </div>
                           </div>
+                        </td>
+
+                        {tableScore && (
+                          <td className="flex items-center justify-center">
+                            <div
+                              className="rounded-[12px] w-[44px] h-[22px] font-bold items-center flex justify-center"
+                              style={{
+                                background: getScoreBackground(candidate.score),
+                                color:
+                                  candidate.score >= 700 ? "white" : "#6F6F6F",
+                              }}
+                            >
+                              {candidate.score}
+                            </div>
+                          </td>
+                        )}
+
+                        <td className="z-20 flex items-center">
+                          <span
+                            className={`text-[14px] font-medium ${
+                              tableBGColor ? "text-white" : "text-black"
+                            }`}
+                          >
+                            {candidate.experience}
+                          </span>
+                        </td>
+
+                        <td
+                          className={`z-20 flex items-center text-[14px] font-medium  ${
+                            tableBGColor ? "text-white" : "text-tableBody"
+                          }`}
+                        >
+                          {candidate.company}
+                        </td>
+
+                        <td
+                          className={`z-20 flex items-center text-[14px] font-medium  ${
+                            tableBGColor ? "text-white" : "text-tableBody"
+                          }`}
+                        >
+                          {candidate.location}
+                        </td>
+
+                        <td
+                          className={`flex items-center  text-[14px] font-medium bg-transparent ${
+                            tableBGColor ? "text-white" : "text-[#656565]"
+                          }`}
+                        >
+                          <SkillDisplay
+                            skills={candidate.skills}
+                            tableBGColor={tableBGColor}
+                          />
+                        </td>
+
+                        <td className="flex items-center justify-self-end">
+                          <button
+                            className={`inline-flex items-center justify-center rounded-lg border hover:bg-[#E5F1FB] hover:border-[#0072DC] transition-all duration-1000 ease-in-out w-26 ${
+                              tableBGColor ? "border-black" : "border-[#98CDFF]"
+                            } ${
+                              loadingSummary[idx] || summaryVisible[idx]
+                                ? "px-3 py-2"
+                                : "p-3"
+                            }`}
+                            onClick={() => toggleSummary(idx)}
+                          >
+                            {!(loadingSummary[idx] || summaryVisible[idx]) && (
+                              <img
+                                src={aiLogo}
+                                alt=""
+                                className="h-6 mt-[-2px]"
+                              />
+                            )}
+                            <span
+                              className={`text-[16px] font-medium Inter ${
+                                tableBGColor ? "text-black" : "text-[#0072DC]"
+                              } ${
+                                loadingSummary[idx] || summaryVisible[idx]
+                                  ? "content-center"
+                                  : "pl-2"
+                              }`}
+                            >
+                              {loadingSummary[idx]
+                                ? "Close"
+                                : summaryVisible[idx]
+                                ? "Close"
+                                : "Summarize"}
+                            </span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tr>
+
+                    {loadingSummary[idx] || summaryVisible[idx] ? (
+                      <tr className="bg-[#F1F4F8]">
+                        <div className="p-0 flex justify-end">
+                          <div
+                            className={`relative flex flex-col px-20 py-5 rounded-b-[10px] ms-[8.1%] bg-summarize_gradient opacity-[80%] w-[94%] `}
+                          >
+                            {loadingSummary[idx] ? (
+                              <div className="opacity-100">
+                                <p className="text-sm font-semibold flex justify-center border border-white/10 bg-white/40 rounded-lg p-1 w-60">
+                                  <img
+                                    src={aiLogo}
+                                    alt=""
+                                    className="h-5 mr-2"
+                                  />
+                                  <span className="text-black text-[16px] font-medium">
+                                    AI Summarizing...
+                                  </span>
+                                </p>
+                                <div className="loading-rectangle opacity-50 mt-3"></div>
+                                <div className="loading-rectangle opacity-50"></div>
+                                <div className="loading-rectangle opacity-50"></div>
+                              </div>
+                            ) : (
+                              <div>
+                                <p className="text-sm font-semibold flex justify-center border border-white/10 bg-white/40 rounded-lg p-1 w-60">
+                                  <img
+                                    src={aiLogo}
+                                    alt=""
+                                    className="h-5 mr-2"
+                                  />
+                                  <span className="text-black text-[16px] font-medium">
+                                    AI Summary
+                                  </span>
+                                </p>
+                                <p className="text-[14px] font-medium mt-3 text-justify">
+                                  Seeking a creative UI/UX Designer specializing
+                                  in web and mobile platforms, focused on
+                                  intuitive, responsive, and visually engaging
+                                  interfaces. Proficient in Figma, Transform
+                                  ideas into high-quality designs, ensuring
+                                  seamless user experiences across devices while
+                                  aligning with business goals.
+                                </p>
+                              </div>
+                            )}
+                          </div>
                         </div>
-                      ) : null}
-                    </React.Fragment>
-                  ))}
-                </div>
-              </div>
-            </div>
+                      </tr>
+                    ) : null}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
           </div>
           <ReactPaginate
             previousLabel={<SlArrowLeft />}

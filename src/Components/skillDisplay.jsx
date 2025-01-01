@@ -39,7 +39,7 @@ const SkillDisplay = ({ skills, tableBGColor }) => {
       ))}
       {remainingSkills.length > 0 && (
         <span
-          className={`inline-block ml-2 cursor-pointer px-2 py-1 z-[99999] relative ${
+          className={`inline-block ml-2 cursor-pointer px-2 py-1 z-10 relative ${
             hover ? "underline" : ""
           }`}
           onMouseEnter={handleMouseEnter}
@@ -51,7 +51,7 @@ const SkillDisplay = ({ skills, tableBGColor }) => {
       {hover && (
         <div
           ref={hoverRef}
-          className="fixed rounded-lg border border-gray-100 bg-white p-3 shadow-xl z-[999999]"
+          className="fixed rounded-lg border border-gray-100 bg-white p-3 shadow-xl z-20"
           style={{
             zIndex: 99999,
             left: containerRef.current
