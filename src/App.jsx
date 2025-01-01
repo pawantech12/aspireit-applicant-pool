@@ -567,32 +567,32 @@ const ApplicantsPool = () => {
               <div className="flex items-center justify-center w-[10%] text-[14px] Inter font-semibold">
                 Applied Date
               </div>
-              <div className="flex items-center justify-center w-[5%] ms-[-4px]">
+              <div className="flex items-center justify-center w-[5%]">
                 <input
                   type="checkbox"
-                  className="custom-checkbox h-6 w-6 appearance-none border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
+                  className="custom-checkbox h-6 w-6  border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
                   checked={isAllSelected}
                   onChange={handleSelectAllChange}
                 />
               </div>
-              <div className="flex items-center w-[15%] text-[14px] Inter font-semibold">
+              <div className="flex items-center w-[15%] pl-[10px] text-[14px] Inter font-semibold">
                 Candidate Name
               </div>
               {showSkillScore && (
-                <div className="flex w-[10%] -ml-[5%] text-[14px] Inter font-semibold">
+                <div className="flex w-[10%] text-[14px] Inter font-semibold">
                   Skill Stack Score
                 </div>
               )}
-              <div className="flex items-center justify-center w-[4%] text-[14px] Inter font-semibold">
+              <div className="flex items-center justify-center w-[4%] text-[14px] Inter font-semibold ps-5">
                 Experience
               </div>
-              <div className="flex items-center justify-center w-[13%] text-[14px] Inter font-semibold">
+              <div className="flex items-center pl-[4.9%] w-[10%] text-[14px] Inter font-semibold">
                 Company
               </div>
-              <div className="flex items-center justify-center w-[5%] text-[14px] Inter font-semibold ms-5">
+              <div className="flex items-center justify-center w-[8.8%] text-[14px] Inter font-semibold ">
                 Location
               </div>
-              <div className="flex items-center ml-[3%] w-[25%] text-[14px] Inter font-semibold">
+              <div className="flex items-center w-[25%] text-[14px] pl-[3%] Inter font-semibold">
                 Key Skills
               </div>
               <div className="flex text-[14px] Inter font-semibold"></div>
@@ -662,10 +662,10 @@ const ApplicantsPool = () => {
                             />
                           )}
 
-                          <div className="flex items-center justify-center w-[6%] pl-[6px]">
+                          <div className="flex items-center justify-center w-[7%] pl-[6px]">
                             <input
                               type="checkbox"
-                              className="custom-checkbox h-6 w-6 appearance-none border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
+                              className="custom-checkbox h-6 w-6  border-2 border-[#737373] rounded-md checked:border-none checked:bg-[#0072DC] focus:ring-indigo-500"
                               checked={selectedCandidates.includes(idx)}
                               onChange={() => handleCheckboxChange(idx)}
                             />
@@ -695,7 +695,9 @@ const ApplicantsPool = () => {
                           </div>
 
                           {tableScore && (
-                            <div className="flex items-center justify-center">
+                            <div
+                              className={`flex items-center justify-center ps-24`}
+                            >
                               <div
                                 className="rounded-[12px] w-[44px] h-[22px] font-bold items-center flex justify-center"
                                 style={{
@@ -715,8 +717,8 @@ const ApplicantsPool = () => {
                           <div
                             className={`flex z-20 items-center ${
                               showSkillScore
-                                ? "pl-[4.5%] w-[10%] ml-[1%]"
-                                : "pl-[2%] w-[7%]"
+                                ? "pl-[8%] w-[14%] ml-[1%]"
+                                : "pl-[0.7%] w-[7%]"
                             }`}
                           >
                             <span
@@ -729,7 +731,9 @@ const ApplicantsPool = () => {
                           </div>
 
                           <div
-                            className={`z-20 flex items-center pl-[4%] text-[14px] font-medium w-[13%] ${
+                            className={`z-20 flex items-center pl-[4%] text-[14px] font-medium w-[10%] ${
+                              showSkillScore && "pl-[5%] "
+                            } ${
                               tableBGColor ? "text-white" : "text-tableBody"
                             }`}
                           >
@@ -749,7 +753,7 @@ const ApplicantsPool = () => {
                           </div>
 
                           <div
-                            className={`flex items-center ml-[40px] w-[35%] text-[14px] font-medium bg-transparent ${
+                            className={`flex items-center ml-[40px] pl-[2%] w-[35%] text-[14px] font-medium bg-transparent ${
                               tableBGColor ? "text-white" : "text-[#656565]"
                             }`}
                           >

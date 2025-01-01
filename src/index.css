@@ -68,7 +68,6 @@
   /* applicant pool started */
   /* Hide the default checkbox tick */
   input[type="checkbox"].custom-checkbox {
-    appearance: none; /* Remove default checkbox style */
     width: 24px;
     height: 24px;
     border: 2px solid #737373; /* Border style */
@@ -83,10 +82,7 @@
     border-color: transparent; /* Remove the border color when checked */
   }
 
-  /* Hide the tick mark */
-  input[type="checkbox"].custom-checkbox:checked::before {
-    content: ""; /* Remove the tick symbol */
-  }
+  
 
   /* Focus ring when the checkbox is focused */
   input[type="checkbox"].custom-checkbox:focus {

@@ -37,6 +37,12 @@ export default {
           "100%": { transform: "translateY(0)", opacity: 1 },
         },
       },
+      gridTemplateColumns: {
+        "custom-8": "0.6fr 0.3fr 0.8fr 0.6fr 0.6fr 0.5fr 1fr 1fr", // No Skill Score
+        "custom-9": "1fr 0.3fr 0.9fr 1.3fr 0.7fr 0.7fr 0.7fr 1fr 1fr", // With Skill Score
+        "custom-7-candidate": "0.3fr 0.7fr 0.5fr 0.5fr 0.5fr 1fr 0.8fr",
+        "custom-8-candidate": "0.3fr 0.7fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr 0.8fr",
+      },
     },
   },
   plugins: [],
