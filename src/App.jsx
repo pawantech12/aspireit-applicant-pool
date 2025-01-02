@@ -248,6 +248,7 @@ const ApplicantsPool = () => {
 
   const handleMenuClick = (range) => {
     setSelectedRange(range);
+    setIsDropdownVisible(false);
 
     // Filter candidates based on the selected range
     const filteredCandidates = candidates.filter((candidate) => {
@@ -286,12 +287,9 @@ const ApplicantsPool = () => {
     }, 3000);
   };
   const toggleDropdown = () => {
-    setIsDropdownVisible(true); // Make sure the dropdown becomes visible when hovering over the button
+    setIsDropdownVisible(!isDropdownVisible); // Make sure the dropdown becomes visible when hovering over the button
   };
 
-  const hideDropdown = () => {
-    setIsDropdownVisible(false); // Hide the dropdown when the mouse leaves the button and the dropdown
-  };
   const handleSelectAllChange = () => {
     if (isAllSelected) {
       setSelectedCandidates([]);
@@ -372,6 +370,7 @@ const ApplicantsPool = () => {
       }, 3000);
     }
     setIsShadowVisible(!isShadowVisible);
+
     console.log(showSkillScore);
   };
 
@@ -540,14 +539,12 @@ const ApplicantsPool = () => {
               h-7"
               />
               <div className="relative flex">
-                <button
+                <div
                   className={`relative z-10  border border-white h-[44px] justify-center flex items-center rounded-[24px] text-[16px] cursor-pointer transition-all duration-300 overflow-hidden ${
                     showSkillScore
                       ? "text-white w-[191px]"
                       : "bg-white text-[#161616] w-[159px]"
                   }`}
-                  onClick={handleSkillScoreClick}
-                  onMouseEnter={toggleDropdown} // Show the dropdown when hovering the button
                 >
                   <div
                     ref={buttonGradientRef}
@@ -566,23 +563,23 @@ const ApplicantsPool = () => {
                       transform: `translateY(10%) rotate(${buttonRotation}deg)`,
                     }}
                   />
-                  <span className="relative z-20 text-[16px]">
+                  <button
+                    className="relative z-20 text-[16px]"
+                    onClick={handleSkillScoreClick}
+                  >
                     Skill Stack Score
-                  </span>
+                  </button>
                   {(showSkillScore || isAnimating) && (
                     <img
                       src={whiteArrow}
                       className="z-30 ml-[12px]"
                       alt="White Arrow"
+                      onClick={toggleDropdown}
                     />
                   )}
-                </button>
+                </div>
                 {isDropdownVisible && (
-                  <ul
-                    className="absolute top-[50px] bg-white  rounded-xl  py-5 px-6 w-[299px]  z-50 space-y-3"
-                    onMouseEnter={toggleDropdown} // Show the dropdown when hovering the button
-                    onMouseLeave={hideDropdown}
-                  >
+                  <ul className="absolute top-[50px] bg-white  rounded-xl  py-5 px-6 w-[299px]  z-50 space-y-3">
                     {[
                       {
                         label: "Gold (900+)",
@@ -720,7 +717,7 @@ const ApplicantsPool = () => {
                 </th>
                 <div
                   className={`grid ps-5 gap-5 w-full ${
-                    showSkillScore
+                    showSkillScore && !isAnimating
                       ? "grid-cols-custom-8-candidate"
                       : "grid-cols-custom-7-candidate"
                   }`}
@@ -736,7 +733,7 @@ const ApplicantsPool = () => {
                   <th className="flex items-center  text-[14px] Inter font-semibold">
                     Candidate Name
                   </th>
-                  {showSkillScore && (
+                  {showSkillScore && !isAnimating && (
                     <th className="flex text-[14px] Inter font-semibold items-center">
                       Skill Stack Score
                     </th>
@@ -769,7 +766,7 @@ const ApplicantsPool = () => {
 
                         <tr
                           className={`bg-white grid ${
-                            showSkillScore
+                            showSkillScore && !isAnimating
                               ? "grid-cols-custom-8-candidate"
                               : "grid-cols-custom-7-candidate"
                           } w-[100%] gap-5 py-[19.5px] relative overflow-hidden px-5 ${
