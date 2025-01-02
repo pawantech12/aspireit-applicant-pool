@@ -22,6 +22,8 @@ export default {
           "linear-gradient(to bottom, #FEC4CB 0%, #F4C8EF 63%)",
         "total-cost-gradient":
           "radial-gradient(48.98% 381.78% at 51.02% 52.52%, #D9FFEE 0%, #E3FFE3 44.4%, #FFFFFF 100%)",
+        "tooltip-gradient-1":
+          "linear-gradient(318.5deg, #D388FF 5.96%, #4B94F7 95.49%);",
       },
       animation: {
         blink: "blink 1.5s infinite",
