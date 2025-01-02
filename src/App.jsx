@@ -271,20 +271,6 @@ const ApplicantsPool = () => {
     });
 
     setCurrentCandidates(filteredCandidates);
-    setIsAnimating(true);
-    setShowSkillScore(true);
-    setTableScore(false);
-    setTableBGColor(true);
-    currentCandidates.forEach((_, idx) => animateCandidate(idx));
-    setTimeout(() => {
-      setIsAnimating(false);
-      setShowSkillScore(true);
-      setTableScore(true);
-      setTableBGColor(false);
-      Object.values(candidateAnimationFrames.current).forEach(
-        cancelAnimationFrame
-      );
-    }, 3000);
   };
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible); // Make sure the dropdown becomes visible when hovering over the button
@@ -351,6 +337,9 @@ const ApplicantsPool = () => {
       setTableBGColor(false);
       cancelAnimationFrame(buttonAnimationFrame.current);
       setButtonRotation(0);
+      setCurrentCandidates(
+        candidates.slice(currentPage * 10, (currentPage + 1) * 10)
+      );
     } else {
       setIsAnimating(true);
       setShowSkillScore(true);
@@ -478,7 +467,7 @@ const ApplicantsPool = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[30%]  flex flex-col max-xl:flex-row gap-8 max-[860px]:flex-col">
+          <div className="w-full xl:w-[30%]  flex flex-col max-xl:flex-row gap-8 max-[860px]:flex-col justify-center">
             <div
               className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] max-xl:h-[130px] w-full"
               style={{
@@ -496,31 +485,6 @@ const ApplicantsPool = () => {
                 </p>
               </div>
               <p className="text-[36px] font-semibold mr-2">1200+</p>
-            </div>
-            <div className="px-[27px] py-[26px] rounded-[10px] flex justify-between items-center h-[55%] max-xl:h-full w-full bg-total-cost-gradient">
-              <div>
-                <h3 className="ml-1 text-[16px] font-semibold text-[#333232]">
-                  Total Cost
-                </h3>
-                <p className="ml-1 text-[14px] text-[#A09E9E] font-medium">
-                  Post Duration - 27days
-                </p>
-              </div>
-              <div className="flex flex-col justify-center items-center">
-                <p className="text-[36px] font-semibold mr-2">&#8377;3.5k</p>
-                <span
-                  className="bg-[#E5F6D2] text-[#858585] text-[12px] px-4 py-1"
-                  style={{
-                    border: "1px solid transparent",
-                    borderImage:
-                      "linear-gradient(90.63deg, #FFFFFF 8.7%, #D2D2D2 27.55%, #FFFFFF 50.08%, #D2D2D2 78.42%, #FFFFFF 98.38%)",
-                    borderImageSlice: 1,
-                    borderRadius: "12px",
-                  }}
-                >
-                  Open 5Aug - Close 2Sep
-                </span>
-              </div>
             </div>
           </div>
         </div>
