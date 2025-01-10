@@ -6,24 +6,26 @@ import aiLogo from "./assets/ai-logo.png";
 import SkillDisplay from "./Components/skillDisplay";
 import Filter from "./assets/blueFilter.svg";
 import Meta from "./assets/meta-logo.png";
-import Sanjay from "./assets/sanjay.jpeg";
-import Mukesh from "./assets/mukesh.jpeg";
-import Debaleena from "./assets/ayushi.jpg";
-import Manjeet from "./assets/manjeet.jpeg";
-import Priyansh from "./assets/priyansh.jpg";
-import Bieden from "./assets/bieden.jpeg";
-import Joe from "./assets/joe.jpeg";
-import Rajan from "./assets/rajan.jpg";
-import Edwin from "./assets/edwin.jpg";
-import Joseph from "./assets/joseph.jpg";
-import Raj from "./assets/raj.jpg";
-import Sundar from "./assets/sundar pitchai.jpg";
 import Location from "./assets/location.svg";
 import Briefcase from "./assets/briefcase.svg";
 import Securitytime from "./assets/securitytime.svg";
 import backgroundImage1 from "./assets/Rectangle 7522.png";
 import whiteArrow from "./assets/whiteDownArrow.svg";
 import Rupees from "./assets/rupees.svg";
+
+import boy1 from "./assets/boy1.jpg";
+import boy2 from "./assets/boy2.jpg";
+import boy3 from "./assets/boy3.jpg";
+import boy4 from "./assets/boy4.jpg";
+import boy5 from "./assets/boy5.jpg";
+import boy6 from "./assets/boy6.jpg";
+import boy7 from "./assets/boy7.jpg";
+import boy8 from "./assets/boy8.jpg";
+import boy9 from "./assets/boy9.jpg";
+import boy10 from "./assets/boy10.jpg";
+import boy11 from "./assets/boy11.jpg";
+
+import girl1 from "./assets/girl1.jpg";
 
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
@@ -37,7 +39,7 @@ const candidates = [
     experience: "2 Years",
     company: "Google",
     location: "Bangalore",
-    profile: Sanjay,
+    profile: boy1,
     skills: [
       "User Research",
       "Figma",
@@ -57,7 +59,7 @@ const candidates = [
     experience: "3 Years",
     company: "Microsoft",
     location: "Hyderabad",
-    profile: Mukesh,
+    profile: boy2,
     skills: ["HTML", "CSS", "JavaScript", "React", "Angular", "TypeScript"],
     score: 878,
   },
@@ -68,7 +70,7 @@ const candidates = [
     experience: "5 Years",
     company: "Amazon",
     location: "Chennai",
-    profile: Manjeet,
+    profile: boy3,
     skills: ["Roadmapping", "Agile", "Scrum", "Leadership", "JIRA"],
     score: 892,
   },
@@ -79,7 +81,7 @@ const candidates = [
     experience: "4 Years",
     company: "Meta",
     location: "Delhi",
-    profile: Debaleena,
+    profile: girl1,
     skills: ["Node.js", "Python", "Django", "MongoDB", "SQL", "Redis"],
     score: 788,
   },
@@ -90,7 +92,7 @@ const candidates = [
     experience: "3 Years",
     company: "Apple",
     location: "Pune",
-    profile: Priyansh,
+    profile: boy4,
     skills: [
       "Python",
       "Machine Learning",
@@ -107,7 +109,7 @@ const candidates = [
     experience: "6 Years",
     company: "Netflix",
     location: "Mumbai",
-    profile: Bieden,
+    profile: boy5,
     skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
     score: 395,
   },
@@ -118,7 +120,7 @@ const candidates = [
     experience: "2 Years",
     company: "Spotify",
     location: "Kolkata",
-    profile: Joe,
+    profile: boy6,
     skills: ["Swift", "Kotlin", "React Native", "UI Testing", "Firebase"],
     score: 482,
   },
@@ -129,7 +131,7 @@ const candidates = [
     experience: "5 Years",
     company: "Tesla",
     location: "Gurgaon",
-    profile: Rajan,
+    profile: boy7,
     skills: [
       "Network Security",
       "Penetration Testing",
@@ -145,7 +147,7 @@ const candidates = [
     experience: "4 Years",
     company: "IBM",
     location: "Ahmedabad",
-    profile: Edwin,
+    profile: boy8,
     skills: ["Azure", "AWS", "GCP", "Serverless", "Cloud Security"],
     score: 385,
   },
@@ -156,7 +158,7 @@ const candidates = [
     experience: "3 Years",
     company: "OpenAI",
     location: "Noida",
-    profile: Joseph,
+    profile: boy9,
     skills: ["Deep Learning", "PyTorch", "TensorFlow", "NLP", "GANs"],
     score: 572,
   },
@@ -167,7 +169,7 @@ const candidates = [
     experience: "2 Years",
     company: "Ubisoft",
     location: "Bangalore",
-    profile: Raj,
+    profile: boy10,
     skills: ["Unity", "Unreal Engine", "C#", "Game Physics", "3D Modeling"],
     score: 480,
   },
@@ -178,7 +180,7 @@ const candidates = [
     experience: "4 Years",
     company: "Coinbase",
     location: "Hyderabad",
-    profile: Sundar,
+    profile: boy11,
     skills: [
       "Smart Contracts",
       "Solidity",
