@@ -8,7 +8,7 @@ import Filter from "./assets/blueFilter.svg";
 import Meta from "./assets/meta-logo.png";
 import Sanjay from "./assets/sanjay.jpeg";
 import Mukesh from "./assets/mukesh.jpeg";
-import Debaleena from "./assets/debaleena.jpg";
+import Debaleena from "./assets/ayushi.jpg";
 import Manjeet from "./assets/manjeet.jpeg";
 import Priyansh from "./assets/priyansh.jpg";
 import Bieden from "./assets/bieden.jpeg";
@@ -52,7 +52,7 @@ const candidates = [
   },
   {
     date: "24 Aug / 2024",
-    name: "John Doe",
+    name: "Mukesh",
     role: "Frontend Developer",
     experience: "3 Years",
     company: "Microsoft",
@@ -63,7 +63,7 @@ const candidates = [
   },
   {
     date: "25 Aug / 2024",
-    name: "Alice Brown",
+    name: "Manjeet",
     role: "Product Manager",
     experience: "5 Years",
     company: "Amazon",
@@ -74,7 +74,7 @@ const candidates = [
   },
   {
     date: "26 Aug / 2024",
-    name: "Debaleena",
+    name: "Ayushi",
     role: "Backend Developer",
     experience: "4 Years",
     company: "Meta",
@@ -85,7 +85,7 @@ const candidates = [
   },
   {
     date: "27 Aug / 2024",
-    name: "Sophia Zhang",
+    name: "Priyansh",
     role: "Data Scientist",
     experience: "3 Years",
     company: "Apple",
@@ -102,7 +102,7 @@ const candidates = [
   },
   {
     date: "28 Aug / 2024",
-    name: "Michael Johnson",
+    name: "Rohit",
     role: "DevOps Engineer",
     experience: "6 Years",
     company: "Netflix",
@@ -113,7 +113,7 @@ const candidates = [
   },
   {
     date: "29 Aug / 2024",
-    name: "Isabella Williams",
+    name: "Raju",
     role: "Mobile App Developer",
     experience: "2 Years",
     company: "Spotify",
@@ -124,7 +124,7 @@ const candidates = [
   },
   {
     date: "30 Aug / 2024",
-    name: "Chris Taylor",
+    name: "Rajan",
     role: "Cybersecurity Specialist",
     experience: "5 Years",
     company: "Tesla",
@@ -140,7 +140,7 @@ const candidates = [
   },
   {
     date: "31 Aug / 2024",
-    name: "Emma Watson",
+    name: "Rohan",
     role: "Cloud Engineer",
     experience: "4 Years",
     company: "IBM",
@@ -151,7 +151,7 @@ const candidates = [
   },
   {
     date: "01 Sep / 2024",
-    name: "Liam Patel",
+    name: "Rishikesh",
     role: "AI Engineer",
     experience: "3 Years",
     company: "OpenAI",
@@ -162,7 +162,7 @@ const candidates = [
   },
   {
     date: "02 Sep / 2024",
-    name: "Olivia Martinez",
+    name: "Raj",
     role: "Game Developer",
     experience: "2 Years",
     company: "Ubisoft",
@@ -173,7 +173,7 @@ const candidates = [
   },
   {
     date: "03 Sep / 2024",
-    name: "Ethan White",
+    name: "Sundar",
     role: "Blockchain Developer",
     experience: "4 Years",
     company: "Coinbase",
@@ -230,12 +230,14 @@ const ApplicantsPool = () => {
   const [isShadowVisible, setIsShadowVisible] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [selectedRange, setSelectedRange] = useState(null);
-  const [currentCandidates, setCurrentCandidates] = useState(
-    candidates.slice(currentPage * 10, (currentPage + 1) * 10)
-  );
+  const [currentCandidates, setCurrentCandidates] = useState();
 
   const pageCount = Math.ceil(candidates.length / 10);
-
+  useEffect(() => {
+    setCurrentCandidates(
+      candidates.slice(currentPage * 10, (currentPage + 1) * 10)
+    );
+  }, [currentPage, candidates]);
   const handleCheckboxChange = (idx) => {
     setSelectedCandidates((prevSelected) => {
       if (prevSelected.includes(idx)) {
@@ -718,7 +720,7 @@ const ApplicantsPool = () => {
               </thead>
 
               <tbody className="min-w-[1200px] overflow-y-auto bg-[#F1F4F8] mt-[12px] scrollbar-left h-[500px] min-h-[500px]">
-                {currentCandidates.length > 0 ? (
+                {currentCandidates?.length > 0 ? (
                   currentCandidates.map((candidate, idx) => (
                     <React.Fragment key={idx}>
                       <tr className="flex items-center gap-5 ps-5 space-y-3">
